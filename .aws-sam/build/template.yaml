@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'helloworld
+
+  Sample SAM Template for helloworld
+
+  '
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: HelloWorldFunction
+      Handler: helloworld.App::hello
+      Runtime: java25
+      Architectures:
+      - x86_64
+      MemorySize: 512
+    Metadata:
+      SamResourceId: HelloWorldFunction
